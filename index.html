@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>Mengalihkan tautan...</p>
+    <script>
+        // Daftar database link pendek sederhana di dalam kode
+        const links = {
+            "game": "https://script.google.com/macros/s/AKfycbxEfDS28U8buvtoX0X2rpCULONqBpOkcYVeIWRQVJCp8AUinVZRdMx9hZT_wfYLHEYdRA/exec" 
+        };
+
+        // Mengambil parameter dari URL (contoh: username.github.io/?p=ig)
+        const urlParams = new URLSearchParams(window.location.search);
+        const key = urlParams.get('p');
+
+        if (key && links[key]) {
+            window.location.replace(links[key]);
+        } else {
+            document.body.innerHTML = "<h3>Tautan tidak ditemukan atau tidak valid!</h3>";
+        }
+    </script>
+</body>
+</html>
